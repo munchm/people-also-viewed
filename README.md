@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+ - https://github.com/Glity/photo-gallery
+ - https://github.com/Glity/reviews
+ - https://github.com/Glity/Calendar-reservation
+ - https://github.com/Glity/people-also-viewed
 
 ## Table of Contents
 
