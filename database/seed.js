@@ -1,5 +1,6 @@
 const db = require('./index');
 const faker = require('faker');
+const server = require('../server'); // to remove
 
 for (let i = 1; i <= 100; i++) {
 
