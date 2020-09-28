@@ -13,6 +13,7 @@ const restaurantSchema = new mongoose.Schema({
   id: Number,
   name: String,
   reviews: Number,
+  reviewsNum: Number,
   price: Number,
   category: Array,
   displayImgURL: String,
@@ -24,7 +25,7 @@ const restaurantSchema = new mongoose.Schema({
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
 const getRestaurants = (callback) => {
-  Restaurant.find({})
+  Restaurant.find({}).limit(12)
     .then((response) => {
       callback(null, response);
     })

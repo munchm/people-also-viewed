@@ -1,6 +1,5 @@
 const db = require('./index');
 const faker = require('faker');
-const server = require('../server'); // to remove
 
 for (let i = 1; i <= 100; i++) {
 
@@ -10,6 +9,11 @@ for (let i = 1; i <= 100; i++) {
     min: 3.5,
     max: 5,
     precision: 0.5
+  });
+
+  const randReviewsNum = faker.random.number({
+    min: 200,
+    max: 1500
   });
 
   const randPrice = faker.random.number({
@@ -30,6 +34,7 @@ for (let i = 1; i <= 100; i++) {
   db.Restaurant.create({
     name: randBizName,
     reviews: randReviews,
+    reviewsNum: randReviewsNum,
     price: randPrice,
     category: randCategory,
     displayImgURL: randDisplayImgURL,
