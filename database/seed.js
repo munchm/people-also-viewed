@@ -11,6 +11,11 @@ for (let i = 1; i <= 100; i++) {
     precision: 0.5
   });
 
+  const randReviewsNum = faker.random.number({
+    min: 200,
+    max: 1500
+  });
+
   const randPrice = faker.random.number({
     min: 1,
     max: 3
@@ -29,6 +34,7 @@ for (let i = 1; i <= 100; i++) {
   db.Restaurant.create({
     name: randBizName,
     reviews: randReviews,
+    reviewsNum: randReviewsNum,
     price: randPrice,
     category: randCategory,
     displayImgURL: randDisplayImgURL,
