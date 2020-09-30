@@ -10,7 +10,7 @@ const RestaurantsList = ({ restaurants }) => {
   });
 
   return (
-    <div>
+    <div className="flex-container">
       {restaurantsComps}
     </div>
   )
