@@ -111,7 +111,7 @@ export const Heart = styled.div`
 `;
 
 export const NoHeart = styled.div`
-  fill: #e7305b;
+  fill: #f43939;
   height: 20px;
   width: 20px;
   stroke: rgb(225, 225, 225);

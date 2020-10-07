@@ -64,7 +64,7 @@ const RatingFormat = styled.div`
   line-height: 36px !important;
   color: rgb(34, 34, 34) !important;
   font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-weight: 700;
+  font-weight: 600;
 
 `;
 
@@ -124,7 +124,7 @@ const GalleryReviewsList = (props) => {
           </StarFormat>  {props.userReview.reviews} {`(${props.userReview.reviewsNum} reviews)`}
             </Hover>
           </RatingFormat>
-          <WriteReview src='https://hackreactor-restaurant-images.s3-us-west-2.amazonaws.com/popup/write-review.png' />
+          <WriteReview src='https://hackreactor-restaurant-images.s3-us-west-2.amazonaws.com/popup/writereview-feature.png' />
         </ReviewFrameList>
         <CommentFrameList>
           {/* <NavBarList /> */}
