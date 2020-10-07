@@ -27,8 +27,8 @@ const seedOne = () => {
     const highly_rated = false;
 
     const randReviewsNum = faker.random.number({
-      min: 3,
-      max: 8
+      min: 10,
+      max: 25
     });
 
     const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -41,12 +41,18 @@ const seedOne = () => {
       const review_userName = faker.name.firstName() + ' ' + faker.name.lastName().slice(0, 1) + '.';
       const review_userPostDate = month[faker.random.number({ min: 0, max: 11 })] + ' ' + faker.random.number({ min: 2018, max: 2020 }).toString();
       const review_userComment = faker.lorem.sentences(faker.random.number({ min: 1, max: 5 }));
+      const review_randRatings = faker.random.number({
+        min: 3.5,
+        max: 5,
+        precision: 0.5
+      });
 
       reviewArr.push({
         avatar: review_userAvatar,
         name: review_userName,
         date: review_userPostDate,
-        comment: review_userComment
+        comment: review_userComment,
+        individual_rating: review_randRatings
       });
     };
 
@@ -90,8 +96,8 @@ const seedTwo = () => {
     const highly_rated = false;
 
     const randReviewsNum = faker.random.number({
-      min: 3,
-      max: 8
+      min: 10,
+      max: 25
     });
 
     const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -102,14 +108,20 @@ const seedTwo = () => {
 
       const review_userAvatar = `https://hackreactor-restaurant-images.s3-us-west-2.amazonaws.com/avatar/${faker.random.number({ min: 1, max: 50 })}.png`;
       const review_userName = faker.name.firstName() + ' ' + faker.name.lastName().slice(0, 1) + '.';
-      const review_userPostDate = month[faker.random.number({ min: 1, max: 12 })] + ' ' + faker.random.number({ min: 2018, max: 2020 }).toString();
+      const review_userPostDate = month[faker.random.number({ min: 0, max: 11 })] + ' ' + faker.random.number({ min: 2018, max: 2020 }).toString();
       const review_userComment = faker.lorem.sentences(faker.random.number({ min: 1, max: 5 }));
+      const review_randRatings = faker.random.number({
+        min: 3.5,
+        max: 5,
+        precision: 0.5
+      });
 
       reviewArr.push({
         avatar: review_userAvatar,
         name: review_userName,
         date: review_userPostDate,
-        comment: review_userComment
+        comment: review_userComment,
+        individual_rating: review_randRatings
       });
     };
 

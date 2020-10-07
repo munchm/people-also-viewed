@@ -21,7 +21,8 @@ const restaurantSchema = new mongoose.Schema({
   super_rated: Boolean,
   inner_img: Array,
   unique_id: Number,
-  reviewModal: Array
+  reviewModal: Array,
+  individual_rating: Number
 });
 
 
