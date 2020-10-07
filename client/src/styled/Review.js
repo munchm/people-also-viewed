@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-let Ratings = styled.div`
+export const Ratings = styled.div`
     width: 108px;
     height: 20px;
     background-position: 0 ${props => {
@@ -23,14 +22,3 @@ let Ratings = styled.div`
     vertical-align: middle;
     overflow: hidden;
 `;
-
-const Rating = (props) => {
-
-  return (
-    <div>
-      {props.restaurant ? <Ratings reviews={props.restaurant.reviews}></Ratings> : null}
-    </div>
-  )
-};
-
-export default Rating;

@@ -20,8 +20,10 @@ const restaurantSchema = new mongoose.Schema({
   heart: Boolean,
   super_rated: Boolean,
   inner_img: Array,
-  unique_id: Number
+  unique_id: Number,
+  reviewModal: Array
 });
+
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
