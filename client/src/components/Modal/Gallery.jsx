@@ -19,7 +19,7 @@ const FavoriteIcon = styled.span`
   top: 30px;
   border-radius: 50%;
   &:hover {
-    color: #92174D;
+    color: #f43939;
   };
 `;
 
@@ -31,7 +31,7 @@ const ShareIcon = styled.span`
   top: 30px;
   border-radius: 50%;
   &:hover {
-    color: #92174D;
+    color: #f43939;
   };
 `;
 

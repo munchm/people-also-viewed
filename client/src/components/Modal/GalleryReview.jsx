@@ -51,7 +51,7 @@ const UserName = styled.div`
 `;
 
 const UserDate = styled.div`
-  margin-top: 10px;
+  margin-top: 12px;
   margin-left: 10px;
   left: 10px;
   top: 10px;
