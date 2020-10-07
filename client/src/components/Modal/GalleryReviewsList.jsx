@@ -6,23 +6,22 @@ const FrameList = styled.div`
   display: block;
   height: 750px;
   position: absolute;
-  width: 50% !important;
+  width: 60% !important;
   right: 40px;
-  @media screen and (min-width: 768px){
+  top: 160px;
+  /* @media screen and (min-width: 768px){
     top: 100px;
-  }
+  } */
 `;
 
 const ReviewFrameList = styled.div`
   display: block;
   height: 70px;
   position: absolute;
-  width: 40% !important;
+  width: 50% !important;
   padding-left: 8px !important;
   padding-right: 8px !important;
   float: left !important;
-  /* left: 25px;
-  top: 45px; */
   position: absolute;
   left: 400px;
   top: 10px;
@@ -77,12 +76,6 @@ const NameFormat = styled.div`
   font-weight: 700;
   margin-bottom: 15px;
   display: block;
-  /* position: absolute;
-  left: 400px;
-  top: 10px;
-  width: 100% !important;
-  float: left !important;
-  margin-left: 3% !important; */
 `;
 
 const StarFormat = styled.span`
@@ -104,6 +97,10 @@ const Hover = styled.div`
   };
 `;
 
+const Positioning = styled.div`
+  top: 20px;
+`;
+
 const GalleryReviewsList = (props) => {
   const reviewsList = props.userReview.reviewModal.map((review, index) => {
     return (
@@ -115,23 +112,25 @@ const GalleryReviewsList = (props) => {
 
   return (
     <FrameList>
-      <ReviewFrameList>
-        <RatingFormat>
-          <NameFormat>
-            {props.userReview.name}
-          </NameFormat>
-          <Hover>
-            <StarFormat className="material-icons md-65">
-              star
+      <Positioning>
+        <ReviewFrameList>
+          <RatingFormat>
+            <NameFormat>
+              {props.userReview.name}
+            </NameFormat>
+            <Hover>
+              <StarFormat className="material-icons md-65">
+                star
           </StarFormat>  {props.userReview.reviews} {`(${props.userReview.reviewsNum} reviews)`}
-          </Hover>
-        </RatingFormat>
-        <WriteReview src='https://hackreactor-restaurant-images.s3-us-west-2.amazonaws.com/popup/write-review.png' />
-      </ReviewFrameList>
-      <CommentFrameList>
-        {/* <NavBarList /> */}
-        {reviewsList}
-      </CommentFrameList>
+            </Hover>
+          </RatingFormat>
+          <WriteReview src='https://hackreactor-restaurant-images.s3-us-west-2.amazonaws.com/popup/write-review.png' />
+        </ReviewFrameList>
+        <CommentFrameList>
+          {/* <NavBarList /> */}
+          {reviewsList}
+        </CommentFrameList>
+      </Positioning>
     </FrameList >
   );
 };
