@@ -1,8 +1,18 @@
 import React from 'react';
-import Restaurant from './Restaurant.jsx'
+import Restaurant from './Restaurant.jsx';
+import styled from 'styled-components';
+
+const InnerCarousel = styled.div`
+  overflow: hidden;
+`;
+
+const InnerContainer = styled.div`
+  display: flex;
+  transition: 0.8s;
+`;
 
 const RestaurantsList = ({ restaurants }) => {
-  console.log('restaurants from RestaurantsList.jsx : ', restaurants);
+
   const restaurantsComps = restaurants.map((restaurant) => {
     return (
       <Restaurant restaurant={restaurant} key={restaurant._id} />
@@ -11,7 +21,11 @@ const RestaurantsList = ({ restaurants }) => {
 
   return (
     <div>
-      {restaurantsComps}
+      <InnerCarousel>
+        <InnerContainer id='slider'>
+          {restaurantsComps}
+        </InnerContainer>
+      </InnerCarousel>
     </div>
   )
 };
