@@ -18,21 +18,26 @@ const restaurantSchema = new mongoose.Schema({
   category: Array,
   displayImgURL: String,
   heart: Boolean,
-  super_rated: Boolean
-
+  super_rated: Boolean,
+  inner_img: Array,
+  unique_id: Number,
+  reviewModal: Array
 });
+
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
 const getRestaurants = (callback) => {
-  Restaurant.find({}).limit(12)
+  Restaurant.aggregate([
+    { $sample: { size: 10 } }
+  ])
     .then((response) => {
       callback(null, response);
     })
     .catch(console.log)
-}
+};
 
 module.exports = {
   getRestaurants,
   Restaurant
-}
+};

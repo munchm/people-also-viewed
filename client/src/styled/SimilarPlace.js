@@ -1,30 +1,29 @@
-import React from 'react';
 import styled from 'styled-components';
-import Rating from './Rating.jsx';
-import icons from '../icons.jsx';
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 230px;
   height: 283px;
   flex-shrink: 0;
   padding-right: 10px;
   box-sizing: border-box;
   cursor: pointer;
+  margin-right: 1px;
   &:hover {
     text-decoration: underline;
   }
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   width: 218px;
   height: 180px;
   border-radius: 4px;
   pointer-events: none;
   overflow: hidden;
   vertical-align: middle;
+  user-select: none;
 `;
 
-const Name = styled.div`
+export const Name = styled.div`
   width: 100%;
   height: 22px;
   text-align: left;
@@ -36,11 +35,11 @@ const Name = styled.div`
   display: flex;
 `;
 
-const Height = styled.div`
+export const Height = styled.div`
   height: 7px;
 `;
 
-const Reviews = styled.div`
+export const ReviewDiv = styled.div`
   width: 194px;
   height: 16px;
   display: flex;
@@ -48,7 +47,7 @@ const Reviews = styled.div`
   color: #757280;
 `;
 
-const Nums = styled.div`
+export const Nums = styled.div`
   width: 108px;
   height: 20px;
   display: flex;
@@ -61,7 +60,7 @@ const Nums = styled.div`
   padding-top: 3.3px;
 `;
 
-const Price = styled.span`
+export const Price = styled.span`
   width: 26.48px;
   height: 17px;
   color: #757280;
@@ -73,7 +72,7 @@ const Price = styled.span`
   font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
 `;
 
-const Period = styled.span`
+export const Period = styled.span`
   width: 26.48px;
   height: 17px;
   color: #757280;
@@ -85,7 +84,7 @@ const Period = styled.span`
   font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
 `;
 
-const Category = styled.span`
+export const Category = styled.span`
   width: 26.48px;
   height: 17px;
   color: #757280;
@@ -97,62 +96,26 @@ const Category = styled.span`
   font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
 `;
 
-const AddHeight = styled.div`
+export const AddHeight = styled.div`
   height: 2.5px;
 `;
 
-const Heart = styled.div`
+export const Heart = styled.div`
   fill: rgba(0, 0, 0.2, 0.5);
   height: 20px;
   width: 20px;
   stroke: rgb(225, 225, 225);
-  stroke-width: 2.5;
+  stroke-width: 2;
   overflow: visible;
-  positon: absolute;
   transform: translate(187px, 22px) scale(.7,.7);
-
 `;
 
-/* ${(props) => props.demo && css`
-fill: rgba(22, 0, 0, 0);
-`;} */
-
-const Box = styled.div`
-  &:hover {
-      filter: contrast(65%);
-      transition: all .2s ease;
-  }
+export const NoHeart = styled.div`
+  fill: #e7305b;
+  height: 20px;
+  width: 20px;
+  stroke: rgb(225, 225, 225);
+  stroke-width: 2;
+  overflow: visible;
+  transform: translate(187px, 22px) scale(.7,.7);
 `;
-
-const Restaurant = ({ restaurant }) => {
-  return (
-    <Container>
-      <Box>
-        <Heart><svg xmlns="http://www.w3.org/2000/svg"><path d={icons.heartIcon} /></svg></Heart>
-        <Image src={restaurant.displayImgURL} />
-      </Box>
-      <Height />
-      <Name>
-        {restaurant.name}
-      </Name>
-      <Reviews>
-        <Rating restaurant={restaurant} />
-        <Nums>
-          {restaurant.reviewsNum}
-        </Nums>
-      </Reviews>
-      <AddHeight />
-      <Price>
-        {restaurant.price === 1 ? "$ " : restaurant.price === 2 ? "$$ " : "$$$ "}
-      </Price>
-      <Period>
-        {"  •  "}
-      </Period>
-      <Category>
-        {restaurant.category[0]}
-      </Category>
-    </Container>
-  )
-};
-
-export default Restaurant;
