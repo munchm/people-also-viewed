@@ -26,7 +26,7 @@ export const CloseIcon = styled.div`
   cursor: pointer;
   user-select: none;
   &:hover {
-    fill: #92174D;
+    fill: #f43939;
   };
 `;
 
@@ -44,7 +44,7 @@ export const Next = styled.div`
   transition: opacity .25s linear;
   user-select: none;
   &:hover {
-    fill: #92174D;
+    fill: #f43939;
   };
 `;
 
@@ -63,8 +63,7 @@ export const Prev = styled.div`
   transform: rotateZ(-180deg);
   user-select: none;
   &:hover {
-    /* fill: #e7759a; */
-    fill: #92174D;
+    fill: #f43939;
   };
 `;
 
