@@ -6,7 +6,7 @@ const Frame = styled.div`
   margin-bottom: 22px !important;
   width: 525.33px;
   height: 144px;
-  z-index: 5;
+  /* z-index: 5; */
 `;
 
 const UserFrame = styled.div`
