@@ -37,3 +37,33 @@ npm install -g webpack
 npm install
 ```
 
+## API Endpoints
+
+GET  - /restaurant/:{restaurantNumber}
+Responds with object following database schema
+
+POST - /restaurant
+Request with object following schema to add to database
+
+PUT - /restaurant
+Request with object following schema to update entry in database
+
+DELETE - /restaurant
+Request with id to delete entry in database
+
+database schema
+{
+  id: Number,
+  name: String,
+  reviews: Number,
+  reviewsNum: Number,
+  price: Number,
+  category: Array,
+  displayImgURL: String,
+  heart: Boolean,
+  super_rated: Boolean,
+  inner_img: Array,
+  unique_id: Number,
+  reviewModal: Array,
+  individual_rating: Number
+}
