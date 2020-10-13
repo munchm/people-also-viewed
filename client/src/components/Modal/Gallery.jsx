@@ -8,32 +8,10 @@ import {
   CloseIcon,
   Next,
   Prev,
-  PagerIndex
+  PagerIndex,
+  FavoriteIcon,
+  ShareIcon
 } from '../../styled/Modal/Gallery.js';
-
-const FavoriteIcon = styled.span`
-  line-height: 0.8;
-  cursor: pointer;
-  position: absolute;
-  left: 50px;
-  top: 30px;
-  border-radius: 50%;
-  &:hover {
-    color: #f43939;
-  };
-`;
-
-const ShareIcon = styled.span`
-  line-height: 0.8;
-  cursor: pointer;
-  position: absolute;
-  left: 90px;
-  top: 30px;
-  border-radius: 50%;
-  &:hover {
-    color: #f43939;
-  };
-`;
 
 class Gallery extends React.Component {
   constructor(props) {
