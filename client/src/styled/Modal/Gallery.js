@@ -19,7 +19,7 @@ export const CloseIcon = styled.div`
   top: 27px;
   position: absolute;
   right: 36px;
-  z-index: 3;
+  /* z-index: 3; */
   height: 30px;
   width: 30px;
   fill: black;
@@ -34,7 +34,7 @@ export const Next = styled.div`
   top: calc(43.5% - 18px);
   position: absolute;
   left: 1005px;
-  z-index: 3;
+  z-index: 1;
   height: 60px;
   width: 60px;
   fill: black;
@@ -52,7 +52,7 @@ export const Prev = styled.div`
  top: calc(40% - 18px);
   position: absolute;
   left: 36px;
-  z-index: 3;
+  z-index: 1;
   height: 60px;
   width: 60px;
   fill: black;
@@ -81,4 +81,28 @@ export const PagerIndex = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
+`;
+
+export const FavoriteIcon = styled.span`
+  line-height: 0.8;
+  cursor: pointer;
+  position: absolute;
+  left: 50px;
+  top: 30px;
+  border-radius: 50%;
+  &:hover {
+    color: #f43939;
+  };
+`;
+
+export const ShareIcon = styled.span`
+  line-height: 0.8;
+  cursor: pointer;
+  position: absolute;
+  left: 90px;
+  top: 30px;
+  border-radius: 50%;
+  &:hover {
+    color: #f43939;
+  };
 `;
