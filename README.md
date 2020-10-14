@@ -37,22 +37,15 @@ npm install -g webpack
 npm install
 ```
 
-## API Endpoints
+### API Endpoints
 
-GET  - /restaurant/:{restaurantNumber}
-Responds with object following database schema
-
-POST - /restaurant
-Request with object following schema to add to database
-
-PUT - /restaurant
-Request with object following schema to update entry in database
-
-DELETE - /restaurant
-Request with id to delete entry in database
-
-database schema
-{
+## Get restaurant info
+GET /restaurant/:{restaurantNumber}
+# Path Parameters:
+id restaurantNumber
+# Success Status Code: 200
+# Returns:
+    {
   id: Number,
   name: String,
   reviews: Number,
@@ -67,3 +60,55 @@ database schema
   reviewModal: Array,
   individual_rating: Number
 }
+
+##  Add restaurant
+POST /restaurant/:{restaurantNumber}
+# Success Status Code: 200
+# Path Parameters:
+id restaurantNumber
+# Request Body:
+    {
+  id: Number,
+  name: String,
+  reviews: Number,
+  reviewsNum: Number,
+  price: Number,
+  category: Array,
+  displayImgURL: String,
+  heart: Boolean,
+  super_rated: Boolean,
+  inner_img: Array,
+  unique_id: Number,
+  reviewModal: Array,
+  individual_rating: Number
+}
+
+
+## Update restaurant info
+PUT /restaurant/:{restaurantNumber}
+# Success Status Code: 200
+# Path Parameters:
+id restaurantNumber
+# Request Body:
+ {
+  id: Number,
+  name: String,
+  reviews: Number,
+  reviewsNum: Number,
+  price: Number,
+  category: Array,
+  displayImgURL: String,
+  heart: Boolean,
+  super_rated: Boolean,
+  inner_img: Array,
+  unique_id: Number,
+  reviewModal: Array,
+  individual_rating: Number
+}
+
+
+## Delete restaurant
+DELETE /restaurant/:{restaurantNumber}
+# Success Status Code: 200
+# Path Parameters:
+id restaurantNumber
