@@ -37,15 +37,15 @@ npm install -g webpack
 npm install
 ```
 
-### API Endpoints
+# API Endpoints
 
 ## Get restaurant info
-GET /restaurant/:{restaurantNumber}
-# Path Parameters:
+GET /getRestaurants/
+### Path Parameters:
 id restaurantNumber
-# Success Status Code: 200
-# Returns:
-    {
+### Success Status Code: 200
+### Returns:
+  {
   id: Number,
   name: String,
   reviews: Number,
@@ -56,40 +56,34 @@ id restaurantNumber
   heart: Boolean,
   super_rated: Boolean,
   inner_img: Array,
-  unique_id: Number,
   reviewModal: Array,
-  individual_rating: Number
+  individual_rating: Number,
+
+  unique_id: Number,
+  __v: Number
 }
 
-##  Add restaurant
-POST /restaurant/:{restaurantNumber}
-# Success Status Code: 200
-# Path Parameters:
+##  Add Review
+POST /getRestaurants/reviews:{restaurantNumber}
+### Success Status Code: 200
+### Path Parameters:
 id restaurantNumber
-# Request Body:
-    {
-  id: Number,
-  name: String,
-  reviews: Number,
-  reviewsNum: Number,
-  price: Number,
-  category: Array,
-  displayImgURL: String,
-  heart: Boolean,
-  super_rated: Boolean,
-  inner_img: Array,
-  unique_id: Number,
-  reviewModal: Array,
-  individual_rating: Number
+### Request Body:
+  {avatar: String,
+Name: String,
+Date: String,
+Comment: String,
+individual_rating: Number
 }
+
 
 
 ## Update restaurant info
-PUT /restaurant/:{restaurantNumber}
-# Success Status Code: 200
-# Path Parameters:
+PUT /getRestaurants/:{restaurantNumber}
+### Success Status Code: 200
+### Path Parameters:
 id restaurantNumber
-# Request Body:
+### Request Body: id is required, include only keys to be updated
  {
   id: Number,
   name: String,
@@ -100,15 +94,13 @@ id restaurantNumber
   displayImgURL: String,
   heart: Boolean,
   super_rated: Boolean,
-  inner_img: Array,
   unique_id: Number,
-  reviewModal: Array,
   individual_rating: Number
 }
 
 
-## Delete restaurant
-DELETE /restaurant/:{restaurantNumber}
-# Success Status Code: 200
-# Path Parameters:
+## Delete review
+DELETE /getRestaurants/reviews:{restaurantNumber}
+### Success Status Code: 200
+### Path Parameters:
 id restaurantNumber
