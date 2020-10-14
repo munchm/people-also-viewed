@@ -64,7 +64,7 @@ id restaurantNumber
 }
 
 ##  Add Review
-POST /getRestaurants/reviews:{restaurantNumber}
+POST /getRestaurants/reviews/{restaurantNumber}
 ### Success Status Code: 200
 ### Path Parameters:
 id restaurantNumber
@@ -79,7 +79,7 @@ individual_rating: Number
 
 
 ## Update restaurant info
-PUT /getRestaurants/:{restaurantNumber}
+PUT /getRestaurants/{restaurantNumber}
 ### Success Status Code: 200
 ### Path Parameters:
 id restaurantNumber
@@ -100,7 +100,7 @@ id restaurantNumber
 
 
 ## Delete review
-DELETE /getRestaurants/reviews:{restaurantNumber}
+DELETE /getRestaurants/reviews/{restaurantNumber}
 ### Success Status Code: 200
 ### Path Parameters:
 id restaurantNumber
