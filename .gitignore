@@ -24,3 +24,5 @@ coverage
 build/
 
 database/image
+
+data.csv
