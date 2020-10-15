@@ -39,7 +39,7 @@ npm install
 
 # API Endpoints
 
-## Get restaurant info
+## Get also viewed restaurants
 GET /getRestaurants/
 ### Path Parameters:
 id restaurantNumber
@@ -54,13 +54,9 @@ id restaurantNumber
   category: Array,
   displayImgURL: String,
   heart: Boolean,
-  super_rated: Boolean,
   inner_img: Array,
   reviewModal: Array,
-  individual_rating: Number,
-
-  unique_id: Number,
-  __v: Number
+  individual_rating: Number
 }
 
 ##  Add Review
@@ -75,8 +71,6 @@ Date: String,
 Comment: String,
 individual_rating: Number
 }
-
-
 
 ## Update restaurant info
 PUT /getRestaurants/{restaurantNumber}
@@ -98,9 +92,11 @@ id restaurantNumber
   individual_rating: Number
 }
 
-
 ## Delete review
 DELETE /getRestaurants/reviews/{restaurantNumber}
 ### Success Status Code: 200
 ### Path Parameters:
 id restaurantNumber
+
+## Database Schemas
+https://docs.google.com/document/d/1gVPdWiDs9Mtf4NX622vfb6sagmv0Zxhd21IqiCOen8I/edit?usp=sharing
