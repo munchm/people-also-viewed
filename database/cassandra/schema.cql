@@ -1,11 +1,10 @@
-drop keyspace if exists people_also_viewed;
+DROP KEYSPACE IF EXISTS people_also_viewed;
 
-create keyspace people_also_viewed replication =
-  {‘class’: ‘SimpleStrategy’, ‘replication_factor’ : 1};
+CREATE KEYSPACE people_also_viewed WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor' : 1 };
 
-use people_also_viewed;
+USE people_also_viewed;
 
-create table restaurants (
+CREATE TABLE restaurants (
   restaurantId int primary key,
   name varchar,
   price int,
@@ -13,9 +12,9 @@ create table restaurants (
   displayImgURL varchar,
   heart boolean,
   super_rated boolean
-)
+);
 
-create table reviews_by_restaurants (
+CREATE TABLE reviews_by_restaurants (
   reviewId int,
   restaurantId int,
   userId int,
@@ -25,7 +24,7 @@ create table reviews_by_restaurants (
   comment varchar,
   individual_rating int,
   primary key(restaurantId, reviewId)
-)
+);
 
 -- Queries
 -- select restaurants by restaurantId
