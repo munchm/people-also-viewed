@@ -17,7 +17,6 @@ CREATE TABLE restaurants (
 CREATE TABLE reviews_by_restaurants (
   reviewId int,
   restaurantId int,
-  userId int,
   userName varchar,
   avatar varchar,
   date varchar,

@@ -12,10 +12,6 @@ app.get('/getRestaurants', (req, res) => {
   });
 });
 
-app.post('getRestaurants/reviews/:restaurantNumber', {
-
-})
-
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

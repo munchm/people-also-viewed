@@ -40,9 +40,11 @@ npm install
 # API Endpoints
 
 ## Get restaurant info
-GET /SimilarRestaurants/:restaurantId
+GET /api/restaurants/:restaurantId/similar_restaurants
+<!-- lowercase with underscores
+/api/restaurants/:restaurantId/similar_restaurants-->
 ### Path Parameters:
-id restaurntId
+id restaurantId
 ### Success Status Code: 200
 ### Returns:
   {
@@ -61,10 +63,10 @@ id restaurntId
 }
 
 ##  Add Review
-POST /SimilarRestaurants/:restaurntId/reviews
+POST /api/restaurants/:restaurantId/reviews
 ### Success Status Code: 200
 ### Path Parameters:
-id restaurntId
+id restaurantId
 ### Request Body:
   {avatar: String,
 Name: String,
@@ -76,10 +78,10 @@ individual_rating: Number
 
 
 ## Update restaurant info
-PUT /SimilarRestaurants/:restaurntId
+PUT /api/restaurants/:restaurantId
 ### Success Status Code: 200
 ### Path Parameters:
-id restaurntId
+id restaurantId
 ### Request Body: id is required, include only keys to be updated
  {
   id: Number,
@@ -97,7 +99,7 @@ id restaurntId
 
 
 ## Delete review
-DELETE /SimilarRestaurants/:restaurntId/reviews
+DELETE /api/restaurants/:restaurantId/reviews
 ### Success Status Code: 200
 ### Path Parameters:
 id restaurntId
