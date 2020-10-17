@@ -14,7 +14,7 @@ for (let i = 0; i < 1000; i++) {
 }
 
 const dataGen = () => {
-  reviewsForPg.pipe(fs.createWriteStream('reviewsForPg.csv'));
+  reviewsForPg.pipe(fs.createWriteStream('reviewsForPg_2.csv'));
   for (let i = 1; i <= numberOfRestaurants; i++) {
     for (let j = 0; j < reviewsPerRestaurant; j++) {
       const reviewsData = {
