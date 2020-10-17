@@ -37,9 +37,9 @@ npm install
 # API Endpoints
 
 ## Get also viewed restaurants
-GET /getRestaurants/
+GET /api/restaurants/:restuarantId
 ### Path Parameters:
-id restaurantNumber
+id restuarantId
 ### Success Status Code: 200
 ### Returns:
   {
@@ -48,7 +48,7 @@ id restaurantNumber
   reviews: Number,
   reviewsNum: Number,
   price: Number,
-  category: Array,
+  category: String,
   displayImgURL: String,
   heart: Boolean,
   inner_img: Array,
@@ -57,43 +57,41 @@ id restaurantNumber
 }
 
 ##  Add Review
-POST /getRestaurants/reviews/{restaurantNumber}
-### Success Status Code: 200
+POST /api/restaurants/:restuarantId/reviews
+### Success Status Code: 201
 ### Path Parameters:
 id restaurantNumber
 ### Request Body:
   {avatar: String,
-Name: String,
-Date: String,
-Comment: String,
-individual_rating: Number
-}
+    Name: String,
+    Date: String,
+    Comment: String,
+    individual_rating: Number
+    }
 
 ## Update restaurant info
-PUT /getRestaurants/{restaurantNumber}
-### Success Status Code: 200
+PUT /api/restaurants/:restuarantId
+### Success Status Code: 202
 ### Path Parameters:
 id restaurantNumber
-### Request Body: id is required, include only keys to be updated
+### Request Body: include only keys to be updated
  {
-  id: Number,
   name: String,
   reviews: Number,
   reviewsNum: Number,
   price: Number,
-  category: Array,
+  category: String,
   displayImgURL: String,
   heart: Boolean,
   super_rated: Boolean,
-  unique_id: Number,
   individual_rating: Number
 }
 
 ## Delete review
-DELETE /getRestaurants/reviews/{restaurantNumber}
+DELETE /api/reviews/:reviewId
 ### Success Status Code: 200
 ### Path Parameters:
-id restaurantNumber
+id reviewId
 
 ## Database Schemas
 https://docs.google.com/document/d/1gVPdWiDs9Mtf4NX622vfb6sagmv0Zxhd21IqiCOen8I/edit?usp=sharing

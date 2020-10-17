@@ -14,7 +14,7 @@ for (let i = 0; i < 1000; i++) {
 }
 
 const dataGen = () => {
-  reviewsForPg.pipe(fs.createWriteStream('data.csv'));
+  reviewsForPg.pipe(fs.createWriteStream('reviewsForPg.csv'));
   for (let i = 1; i <= numberOfRestaurants; i++) {
     for (let j = 0; j < reviewsPerRestaurant; j++) {
       const reviewsData = {
@@ -27,9 +27,12 @@ const dataGen = () => {
       }
       reviewsForPg.write(reviewsData)
     }
+    if (i%100000===0) {
+      console.log(i/1000000 + '%')
+    }
   }
 
-  writer.end()
+  reviewsForPg.end()
   console.log('done')
 }
 
