@@ -7,7 +7,7 @@ var usersForPg = csvWriter();
 const numberOfUsers = 1000;
 
 const dataGen = () => {
-  usersForPg.pipe(fs.createWriteStream('data.csv'));
+  usersForPg.pipe(fs.createWriteStream('usersForPg.csv'));
     for (let i = 0; i < numberOfUsers; i++) {
       const userData = {
         userId: i,
@@ -17,7 +17,7 @@ const dataGen = () => {
       usersForPg.write(userData)
     }
 
-  writer.end()
+  usersForPg.end()
   console.log('done')
 }
 
