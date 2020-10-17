@@ -37,6 +37,13 @@ CREATE TABLE reviews_by_users (
   primary key(user_id, reviewId)
 )
 
+CREATE TABLE users (
+  user_id int,
+  name varchar,
+  avatar varchar,
+  primary key(user_id)
+)
+
 -- Queries
 -- select restaurants by restaurantId
 -- select reviews_by_restaurants by restaurantId
