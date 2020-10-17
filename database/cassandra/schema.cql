@@ -5,13 +5,14 @@ CREATE KEYSPACE people_also_viewed WITH REPLICATION = {'class': 'SimpleStrategy'
 USE people_also_viewed;
 
 CREATE TABLE restaurants (
-  restaurantId int primary key,
+  restaurantId int,
   name varchar,
   price int,
   category varchar,
   displayImgURL varchar,
   heart boolean,
-  super_rated boolean
+  super_rated boolean,
+  primary key(restaurantId, category)
 );
 
 CREATE TABLE reviews_by_restaurants (
@@ -21,7 +22,7 @@ CREATE TABLE reviews_by_restaurants (
   avatar varchar,
   date varchar,
   comment varchar,
-  individual_rating int,
+  individual_rating float,
   primary key(restaurantId, reviewId)
 );
 
