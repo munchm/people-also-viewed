@@ -20,7 +20,9 @@ create table reviews (
   user_id int not null,
   date varchar(30) not null,
   comment text not null,
-  individual_rating float not null
+  individual_rating float not null,
+  constraint fk_restaurants foreign key(restaurant_id) references restaurants(restaurant_id) on delete set null,
+  constraint fk_users foreign key(user_id) references users(user_id) on delete set null
 );
 
 create table users (
