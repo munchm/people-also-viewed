@@ -7,7 +7,7 @@ const cassandradb = new cassandra.Client({
 })
 
 const getRestaurant = (restaurantId) => {
-  cassandradb.execute(`SELECT * FROM restaurants WHERE restaurantId=${restaurantId}`)
+  cassandradb.execute(`SELECT * FROM restaurants WHERE restaurant_Id=${restaurantId}`)
     .then((result) => {
       console.log(result.rows[0])
     })
@@ -17,7 +17,7 @@ const getRestaurant = (restaurantId) => {
 }
 
 const getReviews = (restaurantId) => {
-  cassandradb.execute(`SELECT * FROM reviews WHERE restaurantId=${restaurantId}`)
+  cassandradb.execute(`SELECT * FROM reviews_by_restaurants WHERE restaurant_Id=${restaurantId}`)
     .then((result) => {
       console.log(result.rows)
     })
@@ -27,11 +27,11 @@ const getReviews = (restaurantId) => {
 }
 
 const deletedReview = (reviewId) => {
-  cassandradb.execute(`DELETE FROM reviews WHERE reviewId = ${reviewId}`)
+  cassandradb.execute(`DELETE FROM reviews_by_restaurants WHERE review_Id = ${reviewId}`)
 }
 
-const insertReviews = () => {
-  cassandradb.execute(`INSERT INTO reviews (restaurantId, username, avatar, date, comment, individual_rating`)
+const insertReviews = (review) => {
+  cassandradb.execute(`INSERT INTO reviews_by_restaurants (restaurant_Id, username, avatar, date, comment, individual_rating`)
 }
 
 const updateRestaurant = () => {
