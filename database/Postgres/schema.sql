@@ -1,3 +1,5 @@
+-- psql -f database/Postgres/schema.sql
+
 drop database if exists people_also_viewed;
 
 create database people_also_viewed;
@@ -30,3 +32,9 @@ create table users (
   avatar varchar(100) not null,
   name varchar(30) not null
 );
+
+COPY restaurants (restaurant_id, name, price, category, display_img_url, heart, super_rated) FROM '/Users/johnnytang/Desktop/Hack_Reactor/SDC/people-also-viewed/restaurantsForPg.csv' DELIMITER ',' CSV HEADER;
+
+COPY reviews (review_id, restaurant_id, user_id, date, comment, individual_rating) FROM '/Users/johnnytang/Desktop/Hack_Reactor/SDC/people-also-viewed/reviewsForPg.csv' DELIMITER ',' CSV HEADER;
+
+COPY users (user_id, avatar, name) FROM '/Users/johnnytang/Desktop/Hack_Reactor/SDC/people-also-viewed/usersForPg.csv' DELIMITER ',' CSV HEADER;
