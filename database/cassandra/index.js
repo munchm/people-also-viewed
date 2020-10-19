@@ -16,6 +16,16 @@ const getRestaurant = (restaurantId) => {
     })
 }
 
+const getSimilarRestaurants = (category) => {
+  cassandradb.execute(`SELECT * FROM restaurants WHERE category='${category}' limit 10 allow filtering`)
+    .then((result) => {
+      console.log(result.rows)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
 const getReviews = (restaurantId) => {
   cassandradb.execute(`SELECT * FROM reviews_by_restaurants WHERE restaurant_Id=${restaurantId}`)
     .then((result) => {
@@ -26,18 +36,23 @@ const getReviews = (restaurantId) => {
     })
 }
 
-const deletedReview = (reviewId) => {
-  cassandradb.execute(`DELETE FROM reviews_by_restaurants WHERE review_Id = ${reviewId}`)
+const deletedReview = (restaurantId, reviewId) => {
+  cassandradb.execute(`DELETE FROM reviews_by_restaurants WHERE restaurant_id = ${restaurantId} review_Id = ${reviewId}`)
+    .catch((err) => {
+      console.log(err)
+    })
 }
 
 const insertReviews = (review) => {
-  cassandradb.execute(`INSERT INTO reviews_by_restaurants (restaurant_Id, username, avatar, date, comment, individual_rating`)
+  cassandradb.execute(`INSERT INTO reviews_by_restaurants (restaurant_id, review_id, name, avatar, date, comment, individual_rating) VALUES (${review.restaurantId}, uuid(), ${review.userName}, ${review.avatar}, ${review.date}, ${review.comment}, ${review.rating}`)
+    .catch((err) => {
+      console.log(err)
+    })
 }
 
-const updateRestaurant = () => {
-
+const updateReview = (review, reviewId, restaurantId) => {
+  cassandradb.execute(`UPDATE reviews_by_restaurants SET comment=${review} where restaurant_id=${restaurantId} and review_id=${reviewId}`)
+    .catch((err) => {
+      console.log(err)
+    })
 }
-
-
-
-getRestaurant(500)

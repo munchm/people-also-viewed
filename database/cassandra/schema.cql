@@ -12,7 +12,7 @@ CREATE TABLE restaurants (
   display_img_url varchar,
   heart boolean,
   super_rated boolean,
-  primary key(category, restaurant_id)
+  primary key(restaurant_id, category)
 );
 
 CREATE TABLE reviews_by_restaurants (
@@ -28,10 +28,9 @@ CREATE TABLE reviews_by_restaurants (
 
 COPY people_also_viewed.restaurants (restaurant_id, name, price, category, display_img_url, heart, super_rated) FROM '/Users/johnnytang/Desktop/Hack_Reactor/SDC/people-also-viewed/restaurantsForCassandra.csv' WITH DELIMITER=',' AND HEADER=TRUE;
 
-COPY people_also_viewed.reviews_by_restaurants (review_id, restaurant_id, name, avatar, date, comment, individual_rating) FROM '/Users/johnnytang/Desktop/Hack_Reactor/SDC/people-also-viewed/reviewsForCassandra.csv' WITH DELIMITER=',' AND HEADER=TRUE;
-
 -- Queries
--- select restaurants by restaurant_id
+-- select category by restaurant_id
+-- select restaurants by category
 -- select reviews_by_restaurants by restaurant_id
 -- insert reviews_by_restaurants
 -- update restaurants by restaurant_id
