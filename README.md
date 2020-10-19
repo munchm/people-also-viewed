@@ -36,10 +36,11 @@ npm install
 
 # API Endpoints
 
-## Get also viewed restaurants
-GET /api/restaurants/:restuarantId
+
+## Get restaurant info
+GET /api/restaurants/:restaurantId/similar_restaurants
 ### Path Parameters:
-id restuarantId
+id restaurantId
 ### Success Status Code: 200
 ### Returns:
   {
@@ -60,7 +61,7 @@ id restuarantId
 POST /api/restaurants/:restuarantId/reviews
 ### Success Status Code: 201
 ### Path Parameters:
-id restaurantNumber
+id restaurantId
 ### Request Body:
   {avatar: String,
     Name: String,
@@ -75,6 +76,7 @@ PUT /api/restaurants/:restuarantId
 ### Path Parameters:
 id restaurantNumber
 ### Request Body: include only keys to be updated
+
  {
   name: String,
   reviews: Number,
@@ -93,5 +95,3 @@ DELETE /api/reviews/:reviewId
 ### Path Parameters:
 id reviewId
 
-## Database Schemas
-https://docs.google.com/document/d/1gVPdWiDs9Mtf4NX622vfb6sagmv0Zxhd21IqiCOen8I/edit?usp=sharing
