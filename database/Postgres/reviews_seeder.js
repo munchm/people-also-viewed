@@ -21,7 +21,7 @@ const dataGen = () => {
         reviewId: i * reviewsPerRestaurant + j,
         restaurantId: i,
         userId: Math.floor(Math.random()*1000),
-        date: `${months[Math.floor(Math.random()*12)]} ${208 + Math.floor(Math.random()*3)}`,
+        date: `${months[Math.floor(Math.random()*12)]} ${2018 + Math.floor(Math.random()*3)}`,
         comment: reviews[Math.floor(Math.random()*reviews.length)],
         individual_rating: (Math.floor(Math.random()*11)) / 2
       }
