@@ -6,7 +6,7 @@
   "license": "",
   "private": true,
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "nodemon server/SDC/index.js",
     "react-dev": "webpack -d --watch",
     "seed": "node database/seed.js",
     "test": "jest"

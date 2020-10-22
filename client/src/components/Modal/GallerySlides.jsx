@@ -13,7 +13,7 @@ class GallerySlides extends React.Component {
   render() {
     return (
       <div>
-        <DisplayImage src={`https://hackreactor-restaurant-images.s3-us-west-2.amazonaws.com/newseed/${this.props.innerImg}`} />
+        <DisplayImage src={`https://hrsf130-restaurants.s3-us-west-1.amazonaws.com/${Math.floor(Math.random()*1000)}.jpg`} />
       </div >
     );
   }

@@ -23,6 +23,7 @@ class Main extends React.Component {
       isShowed: false,
       isSignedUp: false,
       currentIndex: 0,
+      reviewModal: []
     };
     this.getRestaurants = this.getRestaurants.bind(this);
     this.handleNext = this.handleNext.bind(this);
@@ -30,10 +31,11 @@ class Main extends React.Component {
     this.handleShow = this.handleShow.bind(this);
     this.handleSignUp = this.handleSignUp.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.getReview = this.getReview.bind(this);
   };
 
   getRestaurants() {
-    axios.get('/getRestaurants')
+    axios.get(`/api/restaurants/${window.location.href.split('/')[3]}/similar_restaurants`)
       .then((response) => {
         this.setState({
           restaurantsArr: response.data
@@ -41,6 +43,15 @@ class Main extends React.Component {
       })
       .catch(console.log);
   };
+
+  getReview() {
+      axios.get(`/api/restaurants/${this.state.restaurantsArr[this.state.currentIndex].restaurant_id}/reviews`)
+        .then(res => {
+          this.setState({
+            reviewModal: res.data
+          })
+        })
+  }
 
   componentDidMount() {
     this.getRestaurants();
@@ -58,6 +69,7 @@ class Main extends React.Component {
   };
 
   handleShow(position) {
+    this.getReview()
     this.setState({
       isShowed: !this.state.isShowed,
       currentIndex: position
@@ -80,7 +92,7 @@ class Main extends React.Component {
     return (
       <MainStyled>
         <SignUp signUp={this.state.signUp} />
-        <Gallery show={this.state.isShowed} restaurant={this.state.restaurantsArr[this.state.currentIndex]} handleClose={this.handleClose} />
+        <Gallery reviewModal={this.state.reviewModal} show={this.state.isShowed} restaurant={this.state.restaurantsArr[this.state.currentIndex]} handleClose={this.handleClose} />
         <Header />
         <SimilarPlacesList restaurants={this.state.restaurantsArr} handleShow={this.handleShow} />
         <div>

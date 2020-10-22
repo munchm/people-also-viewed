@@ -53,8 +53,21 @@ id restaurantId
   displayImgURL: String,
   heart: Boolean,
   inner_img: Array,
-  reviewModal: Array,
   individual_rating: Number
+}
+
+## Get reviews
+GET /api/restaurants/:restaurantId/reviews
+### Path Parameters:
+id restaurantId
+### Success Status Code: 200
+### Returns:
+  {
+  date: String,
+  comment: String,
+  individual_rating: float,
+  avatar: string,
+  name: string
 }
 
 ##  Add Review

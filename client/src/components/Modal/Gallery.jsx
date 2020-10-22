@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import GallerySlides from './GallerySlides.jsx';
 import GalleryReviewsList from './GalleryReviewsList.jsx';
 import icons from '../../icons/icons.js';
+import axios from 'axios'
 import {
   GalleryModal,
   CloseIcon,
@@ -19,6 +20,7 @@ class Gallery extends React.Component {
     this.state = {
       activeIndex: 0,
       length: 3,
+      restaurantId: 100
     };
     this.prevImg = this.prevImg.bind(this);
     this.nextImg = this.nextImg.bind(this);
@@ -52,6 +54,7 @@ class Gallery extends React.Component {
   };
 
   render() {
+    console.log(this.props.reviewModal, 'PROPS')
     if (!this.props.show) {
       return null;
     };
@@ -67,7 +70,7 @@ class Gallery extends React.Component {
           <PagerIndex>
             {this.state.activeIndex + 1} / {this.state.length}
           </PagerIndex>
-          <GallerySlides innerImg={this.props.restaurant.inner_img[this.state.activeIndex]} />
+          <GallerySlides />
           <CloseIcon onClick={() => { this.props.handleClose(false); this.resetImg() }}>
             <svg viewBox="0 0 24 24"><g><path d={icons.closeIcon}></path></g></svg>
           </CloseIcon>
@@ -77,7 +80,7 @@ class Gallery extends React.Component {
           <Prev onClick={() => { this.prevImg() }}>
             <svg viewBox="0 0 24 24"><g><path d={icons.prev}></path></g></svg>
           </Prev>
-          <GalleryReviewsList userReview={this.props.restaurant} />
+          <GalleryReviewsList reviewModal={this.props.reviewModal} userReview={this.props.restaurant} />
         </GalleryModal>
       </div>
     );

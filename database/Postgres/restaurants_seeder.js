@@ -18,7 +18,9 @@ const dataGen = () => {
       category: categories[Math.floor(Math.random()*50)],
       displayImgURL: `https://hrsf130-restaurants.s3-us-west-1.amazonaws.com/${Math.floor(Math.random()*1000)}.jpg`,
       heart: false,
-      super_rated: Math.random() > .8
+      super_rated: Math.random() > .8,
+      reviews: ((Math.floor(Math.random()*4)) / 2) + 3.5,
+      reviews_num: 100 + Math.floor(Math.random() * 900)
     }
     restaurantsForPg.write(restaurantData)
   }
