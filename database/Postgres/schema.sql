@@ -13,7 +13,9 @@ create table restaurants (
   category varchar(30) not null,
   display_img_URL varchar(100) not null,
   heart boolean not null,
-  super_rated boolean not null
+  super_rated boolean not null,
+  overall_rating float not null,
+  reviews_num int not null
 );
 
 create table reviews (
@@ -33,7 +35,7 @@ create table users (
   name varchar(30) not null
 );
 
-COPY restaurants (restaurant_id, name, price, category, display_img_url, heart, super_rated) FROM '/Users/johnnytang/Desktop/Hack_Reactor/SDC/people-also-viewed/restaurantsForPg.csv' DELIMITER ',' CSV HEADER;
+COPY restaurants (restaurant_id, name, price, category, display_img_url, heart, super_rated, overall_rating, reviews_num) FROM '/Users/johnnytang/Desktop/Hack_Reactor/SDC/people-also-viewed/restaurantsForPg.csv' DELIMITER ',' CSV HEADER;
 
 COPY reviews (review_id, restaurant_id, user_id, date, comment, individual_rating) FROM '/Users/johnnytang/Desktop/Hack_Reactor/SDC/people-also-viewed/reviewsForPg.csv' DELIMITER ',' CSV HEADER;
 

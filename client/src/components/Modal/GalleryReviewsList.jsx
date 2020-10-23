@@ -102,13 +102,12 @@ const Positioning = styled.div`
 `;
 
 const GalleryReviewsList = (props) => {
-  const reviewsList = props.userReview.reviewModal.map((review, index) => {
+  const reviewsList = props.reviewModal.map((review, index) => {
     return (
       <GalleryReview review={review} key={index} />
     );
   });
 
-  console.log(props.userReview);
 
   return (
     <FrameList>
@@ -121,7 +120,7 @@ const GalleryReviewsList = (props) => {
             <Hover>
               <StarFormat className="material-icons md-65">
                 star
-          </StarFormat>  {props.userReview.reviews} {`(${props.userReview.reviewsNum} reviews)`}
+          </StarFormat>  {props.userReview.reviews} {`(${props.userReview.reviews_num} reviews)`}
             </Hover>
           </RatingFormat>
           <WriteReview src='https://hackreactor-restaurant-images.s3-us-west-2.amazonaws.com/popup/writereview-feature.png' />

@@ -41,7 +41,7 @@ class SimilarPlace extends React.Component {
           {this.state.heart ? <NoHeart><svg xmlns="http://www.w3.org/2000/svg" width="31" height="31"><path d={icons.heartIcon} /></svg></NoHeart> : <Heart><svg xmlns="http://www.w3.org/2000/svg" width="31" height="31"><path d={icons.heartIcon} /></svg></Heart>}
         </div>
         <div onClick={() => { this.props.handleShow(this.props.index) }} >
-          <Image src={this.props.restaurant.displayImgURL} />
+          <Image src={this.props.restaurant.display_img_url} />
         </div>
         <Height />
         <Name>
@@ -50,7 +50,7 @@ class SimilarPlace extends React.Component {
         <ReviewDiv>
           <Review restaurant={this.props.restaurant} />
           <Nums>
-            {this.props.restaurant.reviewsNum}
+            {this.props.restaurant.reviews_num}
           </Nums>
         </ReviewDiv>
         <AddHeight />
@@ -61,7 +61,7 @@ class SimilarPlace extends React.Component {
           {"  •  "}
         </Period>
         <Category>
-          {this.props.restaurant.category[0]}
+          {this.props.restaurant.category}
         </Category>
       </Container >
     );
