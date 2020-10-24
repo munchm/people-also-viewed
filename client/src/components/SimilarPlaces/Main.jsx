@@ -35,7 +35,7 @@ class Main extends React.Component {
   };
 
   getRestaurants() {
-    axios.get(`/api/restaurants/${window.location.href.split('/')[3]}/similar_restaurants`)
+    axios.get(`/api/restaurants/${window.location.href.split('/')[3] ? window.location.href.split('/')[3] : 1}/similar_restaurants`)
       .then((response) => {
         this.setState({
           restaurantsArr: response.data
