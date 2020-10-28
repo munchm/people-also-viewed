@@ -1,8 +1,8 @@
-require('newrelic');
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const port = 3001
+const port = 3000
 const path = require('path')
 const pgdb = require('../../database/Postgres')
 
@@ -122,5 +122,5 @@ app.put('/api/restaurants/:restaurantId', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Example app listening at port ${port}`);
 });
